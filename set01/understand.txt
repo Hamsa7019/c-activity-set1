@@ -1,0 +1,22 @@
+#- used to get the variables from the studio library
+formal parameter - void add(int a,int b,int *sum)
+actual parameter - output(a,b,c,largest);
+what is main do?
+main is where the program execution starts. it will call all the other functions in the program
+In call by reference ,int input(int *a, int *b, int *c) -->  the input function takes three integer pointers as parameters, and inside the function, it directly modifies the values pointed to by these pointers without needing an additional integer variable. 
+There is no difference between call by reference and pass by reference.
+Call by reference --> when there is a change in formal parameter (int add(int *a,int *b)) then,the actual parameters (input(&a,&b)) also changes. all the operations performed on the value stored in the address of actual parameters.it is implemented by passing a value.
+Call by value --> when there is change in formal parameters there is no change in actual parameters.
+calling function--> actual parameter
+called function--> formal parameter
+change content of address variable is "called function".
+actual variable is modified is "calling function".
+syntax:-
+int a; (normal variable)
+int *b; (address/pointer variable)
+*b=10; (change contents of address variable).
+* --> pointer/ address, that can hold address of integer variable.
+& --> it is copied to the variable during function call.
+
+Day--2
+sum=0-->

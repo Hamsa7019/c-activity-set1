@@ -1,0 +1,120 @@
+PS C:\Users\Manasa\Desktop\c-activity-set1> git add .                              
+PS C:\Users\Manasa\Desktop\c-activity-set1> cd set01                               
+PS C:\Users\Manasa\Desktop\c-activity-set1\set01> gcc -g -O0 problem08.c -o problem08.exe
+>> 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file problem08.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+PS C:\Users\Manasa\Desktop\c-activity-set1\set01> 
+ *  History restored 
+
+PS C:\Users\Manasa\Desktop\c-activity-set1> gcc -g -O0 problem08.c -o problem08.exe
+>> ^C
+PS C:\Users\Manasa\Desktop\c-activity-set1> gcc -g -O0 problem08.c -o problem08.exe
+>>
+gcc.exe: error: problem08.c: No such file or directory
+gcc.exe: fatal error: no input files
+compilation terminated.
+PS C:\Users\Manasa\Desktop\c-activity-set1> cd set01
+PS C:\Users\Manasa\Desktop\c-activity-set1\set01> gcc -g -O0 problem08.c -o problem08.exe
+>>
+PS C:\Users\Manasa\Desktop\c-activity-set1\set01>  gdb .\problem08.exe
+>> 
+GNU gdb (GDB) 7.6.1
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "mingw32".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+Reading symbols from C:\Users\Manasa\Desktop\c-activity-set1\set01\problem08.exe...done.
+(gdb) b main
+Breakpoint 1 at 0x401588: file problem08.c, line 44.
+(gdb) r
+Starting program: C:\Users\Manasa\Desktop\c-activity-set1\set01/.\problem08.exe
+[New Thread 1676.0x3278]
+[New Thread 1676.0x577c]
+
+Breakpoint 1, 0x00401588 in main () at problem08.c:44
+44      {
+(gdb) n
+45          int n,sum=0;
+(gdb) n
+46          n=input_array_size();
+(gdb) n
+enter the value
+2
+47          int a[n];
+(gdb) n
+48          input_array(n,a);
+(gdb) 3
+Undefined command: "3".  Try "help".
+(gdb) n
+enter the array :
+3
+3
+49          sum=sum_n_array(n,a);
+(gdb) n
+50          output(n,a,sum);
+(gdb) n
++3+3is 651          return 0;
+(gdb)
+52      }(gdb) q
+A debugging session is active.
+
+        Inferior 1 [process 1676] will be killed.
+
+Quit anyway? (y or n) y
+error return ../../gdb-7.6.1/gdb/windows-nat.c:1275 was 5
+PS C:\Users\Manasa\Desktop\c-activity-set1\set01>  gdb .\problem08.exe
+>>
+GNU gdb (GDB) 7.6.1
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "mingw32".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+Reading symbols from C:\Users\Manasa\Desktop\c-activity-set1\set01\problem08.exe...done.
+(gdb) b main
+Breakpoint 1 at 0x401588: file problem08.c, line 44.
+(gdb) r
+Starting program: C:\Users\Manasa\Desktop\c-activity-set1\set01/.\problem08.exe 
+[New Thread 16392.0x3a30]
+[New Thread 16392.0x560c]
+
+Breakpoint 1, 0x00401588 in main () at problem08.c:44
+warning: Source file is more recent than executable.
+44      {
+(gdb) n
+45          int n,sum=0;
+(gdb) s
+46          n=input_array_size();
+(gdb) s
+input_array_size () at problem08.c:5
+5           printf("enter the value\n");
+(gdb) n
+enter the value
+6           scanf("%d",&n);
+(gdb) n
+2
+7           return n;
+(gdb) n
+8       }
+(gdb) n
+main () at problem08.c:47
+47          int a[n];
+(gdb) n
+48          input_array(n,a);
+(gdb) n
+enter the array :
+2
+2
+49          sum=sum_n_array(n,a);
+(gdb) n
+50          output(n,a,sum);
+(gdb) p sum
+$1 = 4

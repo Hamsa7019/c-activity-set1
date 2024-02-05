@@ -1,0 +1,16 @@
+ gcc -g -O0 problem08.c -o problem08.exe
+>> 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file problem08.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+PS C:\Users\Manasa\Desktop\c-activity-set1\set01> 
+ *  History restored 
+
+PS C:\Users\Manasa\Desktop\c-activity-set1> gcc -g -O0 problem08.c -o problem08.exe
+>> ^C
+PS C:\Users\Manasa\Desktop\c-activity-set1> gcc -g -O0 problem08.c -o problem08.exe
+>>
+gcc.exe: error: problem08.c: No such file or directory
+gcc.exe: fatal error: no input files
+compilation terminated.
+PS C:\Users\Manasa\Desktop\c-activity-set1> cd set01
+PS C:\Users\Manasa\Desktop\c-activity-set1\set01> gcc -g -O0 problem08.c -o problem08.exe

@@ -1,0 +1,94 @@
+> gdb .\problem05.exe
+GNU gdb (GDB) 7.6.1
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "mingw32".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+Reading symbols from C:\Users\Manasa\Desktop\c-activity-set1\set01\problem05.exe...done.
+(gdb) b main
+Breakpoint 1 at 0x40150a: file problem05.c, line 35.
+(gdb) r
+Starting program: C:\Users\Manasa\Desktop\c-activity-set1\set01/.\problem05.exe 
+[New Thread 17244.0x4660]
+[New Thread 17244.0x1648]
+
+Breakpoint 1, main () at problem05.c:35
+35          a=input();
+(gdb) n
+enter the value
+5
+36          b=input();
+(gdb) n
+enter the value
+6
+37          c=input();
+(gdb) n
+enter the value
+3
+38          largest=compare(a,b,c);
+(gdb) n
+39          output(a,b,c,largest);
+(gdb) p compare
+$1 = {int (int, int, int)} 0x40148a <compare>
+(gdb) p sum
+No symbol "sum" in current context.
+(gdb) r4
+Undefined command: "r4".  Try "help".
+(gdb) r
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+error return ../../gdb-7.6.1/gdb/windows-nat.c:1275 was 5
+Starting program: C:\Users\Manasa\Desktop\c-activity-set1\set01/.\problem05.exe 
+[New Thread 3672.0x2b24]
+[New Thread 3672.0x39d0]
+
+Breakpoint 1, main () at problem05.c:35
+35          a=input();
+(gdb) s
+input () at problem05.c:8
+8           printf("enter the value\n");
+(gdb) n
+enter the value
+9           scanf("%d",&n);
+(gdb) 3
+Undefined command: "3".  Try "help".
+(gdb) n
+3
+10          return n;
+(gdb) c
+Continuing.
+enter the value
+4
+enter the value
+3
+ the largest among 3 4 and 3 is 4[Inferior 1 (process 3672) exited normally]
+(gdb) c
+The program is not being run.
+(gdb) r
+Starting program: C:\Users\Manasa\Desktop\c-activity-set1\set01/.\problem05.exe 
+[New Thread 4088.0x3ca0]
+[New Thread 4088.0x3aa0]
+
+Breakpoint 1, main () at problem05.c:35
+35          a=input();
+(gdb) s
+input () at problem05.c:8
+8           printf("enter the value\n");
+(gdb) n
+enter the value
+9           scanf("%d",&n);
+(gdb) n
+3
+10          return n;
+(gdb) c
+Continuing.
+enter the value
+5
+enter the value
+9
+ the largest among 3 5 and 9 is 9[Inferior 1 (process 4088) exited normally]
+(gdb) 

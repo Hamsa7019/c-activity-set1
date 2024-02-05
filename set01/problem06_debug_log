@@ -1,0 +1,261 @@
+ gcc -g -O0 problem06.c -o problem06.exe
+problem06.c: In function 'input':
+problem06.c:8:9: error: 'a' redeclared as different kind of symbol
+     int a,b,c,n;
+         ^
+problem06.c:6:16: note: previous definition of 'a' was here
+ int input(int *a, int *b, int *c)
+                ^
+problem06.c:8:11: error: 'b' redeclared as different kind of symbol
+     int a,b,c,n;
+           ^
+problem06.c:6:24: note: previous definition of 'b' was here
+ int input(int *a, int *b, int *c)
+                        ^
+problem06.c:8:13: error: 'c' redeclared as different kind of symbol
+     int a,b,c,n;
+             ^
+problem06.c:6:32: note: previous definition of 'c' was here
+ int input(int *a, int *b, int *c)
+                                ^
+problem06.c: In function 'compare':
+problem06.c:15:9: error: 'largest' redeclared as different kind of symbol
+     int largest;
+         ^~~~~~~
+problem06.c:13:39: note: previous definition of 'largest' was here
+ void compare(int a, int b, int c,int *largest)
+                                       ^~~~~~~
+problem06.c:18:9: error: invalid type argument of unary '*' (have 'int')
+         *largest=a;
+         ^~~~~~~~
+problem06.c:22:9: error: invalid type argument of unary '*' (have 'int')
+         *largest=b;
+         ^~~~~~~~
+problem06.c:25:9: error: invalid type argument of unary '*' (have 'int')
+         *largest=c;
+         ^~~~~~~~
+PS C:\Users\Manasa\Desktop\c-activity-set1\set01> gcc -g -O0 problem06.c -o problem06.exe
+problem06.c: In function 'input':
+problem06.c:8:9: error: 'a' redeclared as different kind of symbol
+     int a,b,c,n;
+         ^
+problem06.c:6:16: note: previous definition of 'a' was here
+ int input(int *a, int *b, int *c)
+                ^
+problem06.c:8:11: error: 'b' redeclared as different kind of symbol
+     int a,b,c,n;
+           ^
+problem06.c:6:24: note: previous definition of 'b' was here
+ int input(int *a, int *b, int *c)
+                        ^
+problem06.c:8:13: error: 'c' redeclared as different kind of symbol
+     int a,b,c,n;
+             ^
+problem06.c:6:32: note: previous definition of 'c' was here
+ int input(int *a, int *b, int *c)
+                                ^
+PS C:\Users\Manasa\Desktop\c-activity-set1\set01> gcc -g -O0 problem06.c -o problem06.exe
+PS C:\Users\Manasa\Desktop\c-activity-set1\set01> gdb .\problem06.exe
+GNU gdb (GDB) 7.6.1
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "mingw32".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+Reading symbols from C:\Users\Manasa\Desktop\c-activity-set1\set01\problem06.exe...done.
+(gdb) b main
+Breakpoint 1 at 0x40151a: file problem06.c, line 34.
+(gdb) r
+Starting program: C:\Users\Manasa\Desktop\c-activity-set1\set01/.\problem06.exe
+[New Thread 11684.0x1a88]
+[New Thread 11684.0x3be8]
+
+Breakpoint 1, main () at problem06.c:34
+34          input(&a,&b,&c);
+(gdb) n
+enter the value for a,b and c
+1
+4
+6
+35          compare(a,b,c,&largest);
+(gdb) n
+36          output(a,b,c,largest);
+(gdb) p compare
+$1 = {void (int, int, int, int *)} 0x401498 <compare>
+(gdb) r
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+error return ../../gdb-7.6.1/gdb/windows-nat.c:1275 was 5
+Starting program: C:\Users\Manasa\Desktop\c-activity-set1\set01/.\problem06.exe 
+[New Thread 4788.0x387c]
+[New Thread 4788.0x3b58]
+
+Breakpoint 1, main () at problem06.c:34
+34          input(&a,&b,&c);
+(gdb) s
+input (a=0x61ff1c, b=0x61ff18, c=0x61ff14) at problem06.c:9
+9           printf("enter the value for a,b and c\n");
+(gdb) 1
+Undefined command: "1".  Try "help".
+(gdb) help
+List of classes of commands:
+
+aliases -- Aliases of other commands
+breakpoints -- Making program stop at certain points
+data -- Examining data
+files -- Specifying and examining files
+internals -- Maintenance commands
+obscure -- Obscure features
+running -- Running the program
+stack -- Examining the stack
+status -- Status inquiries
+support -- Support facilities
+tracepoints -- Tracing of program execution without stopping the program
+user-defined -- User-defined commands
+
+Type "help" followed by a class name for a list of commands in that class.
+Type "help all" for the list of all commands.
+Type "help" followed by command name for full documentation.
+Type "apropos word" to search for commands related to "word".
+Command name abbreviations are allowed if unambiguous.
+(gdb) b main
+Note: breakpoint 1 also set at pc 0x40151a.
+Breakpoint 2 at 0x40151a: file problem06.c, line 34.
+(gdb) r
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+error return ../../gdb-7.6.1/gdb/windows-nat.c:1275 was 5
+Starting program: C:\Users\Manasa\Desktop\c-activity-set1\set01/.\problem06.exe 
+[New Thread 17940.0x22ac]
+[New Thread 17940.0x35f0]
+
+Breakpoint 1, main () at problem06.c:34
+34          input(&a,&b,&c);
+(gdb) s
+input (a=0x61ff1c, b=0x61ff18, c=0x61ff14) at problem06.c:9
+9           printf("enter the value for a,b and c\n");
+(gdb) n 
+enter the value for a,b and c
+10          scanf("%d %d %d",a,b,c);
+(gdb) n
+4
+6
+7
+11          return n;
+(gdb) n
+12      }
+(gdb) n
+main () at problem06.c:35
+35          compare(a,b,c,&largest);
+(gdb) n
+36          output(a,b,c,largest);
+(gdb) p compare
+$2 = {void (int, int, int, int *)} 0x401498 <compare>
+(gdb) r
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+error return ../../gdb-7.6.1/gdb/windows-nat.c:1275 was 5
+Starting program: C:\Users\Manasa\Desktop\c-activity-set1\set01/.\problem06.exe 
+[New Thread 16728.0x468c]
+[New Thread 16728.0x3f00]
+
+Breakpoint 1, main () at problem06.c:34
+34          input(&a,&b,&c);
+(gdb) n
+enter the value for a,b and c
+2
+3
+4
+35          compare(a,b,c,&largest);
+(gdb) s
+compare (a=2, b=3, c=4, largest=0x61ff10) at problem06.c:15
+15          if(a>b && a>c)
+(gdb) n
+19          else if(b>c && b>a)
+(gdb) n
+24              *largest=c;
+(gdb) n
+26      }
+(gdb) n
+main () at problem06.c:36
+36          output(a,b,c,largest);
+(gdb) s
+output (a=2, b=3, c=4, largest=4) at problem06.c:29
+29          printf(" the largest among %d %d and %d is %d",a,b,c,largest);
+(gdb) n
+ the largest among 2 3 and 4 is 430         }
+(gdb) q
+A debugging session is active.
+
+        Inferior 1 [process 16728] will be killed.
+
+Quit anyway? (y or n) y
+error return ../../gdb-7.6.1/gdb/windows-nat.c:1275 was 5
+PS C:\Users\Manasa\Desktop\c-activity-set1\set01> gdb .\problem06.exe
+GNU gdb (GDB) 7.6.1
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "mingw32".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+Reading symbols from C:\Users\Manasa\Desktop\c-activity-set1\set01\problem06.exe...done.
+(gdb) b main
+Breakpoint 1 at 0x40151a: file problem06.c, line 34.
+(gdb) r
+Starting program: C:\Users\Manasa\Desktop\c-activity-set1\set01/.\problem06.exe 
+[New Thread 7860.0x2774]
+[New Thread 7860.0x1de0]
+
+Breakpoint 1, main () at problem06.c:34
+warning: Source file is more recent than executable.
+34          input(&a,&b,&c);
+(gdb) s
+input (a=0x61ff1c, b=0x61ff18, c=0x61ff14) at problem06.c:9
+9           printf("enter the value for a,b and c\n");
+(gdb) q
+A debugging session is active.
+
+        Inferior 1 [process 7860] will be killed.
+
+Quit anyway? (y or n) y
+error return ../../gdb-7.6.1/gdb/windows-nat.c:1275 was 5
+PS C:\Users\Manasa\Desktop\c-activity-set1\set01> gdb .\problem06.exe
+GNU gdb (GDB) 7.6.1
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "mingw32".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+Reading symbols from C:\Users\Manasa\Desktop\c-activity-set1\set01\problem06.exe...done.
+(gdb) b main
+Breakpoint 1 at 0x40151a: file problem06.c, line 34.
+(gdb) b main
+Note: breakpoint 1 also set at pc 0x40151a.
+Breakpoint 2 at 0x40151a: file problem06.c, line 34.
+(gdb) r
+Starting program: C:\Users\Manasa\Desktop\c-activity-set1\set01/.\problem06.exe 
+[New Thread 16224.0x3704]
+[New Thread 16224.0x3874]
+
+Breakpoint 1, main () at problem06.c:34
+warning: Source file is more recent than executable.
+34          output(a,b,c,largest);
+(gdb) n
+enter the value for a,b and c
+1
+2
+3
+35          return 0;
+(gdb) c
+Continuing.
+ the largest among 1 2 and 3 is 3[Inferior 1 (process 16224) exited normally]
+(gdb)

@@ -1,0 +1,41 @@
+PS C:\Users\Manasa\Desktop\c-activity-set1\set01> gdb .\problem03.exe
+GNU gdb (GDB) 7.6.1
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "mingw32".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+Reading symbols from C:\Users\Manasa\Desktop\c-activity-set1\set01\problem03.exe...done.
+(gdb) b main
+Breakpoint 1 at 0x4014d8: file problem03.c, line 23.
+(gdb) r
+Starting program: C:\Users\Manasa\Desktop\c-activity-set1\set01/.\problem03.exe 
+[New Thread 1728.0x2730]
+[New Thread 1728.0x3870]
+
+Breakpoint 1, main () at problem03.c:23
+23          a=input();
+(gdb) n
+enter the value
+4
+24          b=input();
+(gdb) n
+enter the value
+6
+25          sum=add(a,b);
+(gdb) n
+26          output(a,b,sum);
+(gdb) n
+the sum of 4 and 6 is 10
+27          return 0;
+(gdb) p sum
+$1 = 10
+(gdb) n
+28      }
+(gdb) c
+Continuing.
+[Inferior 1 (process 1728) exited normally]
+(gdb) q
