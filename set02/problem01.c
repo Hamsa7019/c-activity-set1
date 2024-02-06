@@ -7,7 +7,7 @@ struct triangle
     float base;
     float height;
 };
-typedef struct triangle Tria;
+typedef struct triangle tria;
 void input(float *base, float *height)
 {
     printf("enter the value for base\n");
