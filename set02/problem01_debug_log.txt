@@ -1,0 +1,55 @@
+ gdb problem01.exe
+GNU gdb (GDB) 7.6.1
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "mingw32".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+Reading symbols from C:\Users\Manasa\Desktop\c-activity-set1\set02\problem01.exe...done.
+(gdb) q
+PS C:\Users\Manasa\Desktop\c-activity-set1\set02> gdb ./problem01.exe
+GNU gdb (GDB) 7.6.1
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "mingw32".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+Reading symbols from C:\Users\Manasa\Desktop\c-activity-set1\set02\problem01.exe...done.
+(gdb) b main
+Breakpoint 1 at 0x401505: file problem01.c, line 29.
+(gdb) r
+Starting program: C:\Users\Manasa\Desktop\c-activity-set1\set02/./problem01.exe 
+[New Thread 6208.0x2928]
+[New Thread 6208.0x392c]
+
+Breakpoint 1, main () at problem01.c:29
+29          input(&base,&height);
+(gdb) s
+input (base=0x61ff1c, height=0x61ff18) at problem01.c:13
+13          printf("enter the value for base\n");
+(gdb) s
+enter the value for base
+14          scanf("%f",base);
+(gdb) s
+4
+15          printf("enter the value for height\n");
+(gdb) s
+enter the value for height
+16          scanf("%f",height);
+(gdb) s
+6
+17      }
+(gdb) n
+main () at problem01.c:30
+30          find_area(base,height,&area);
+(gdb) n
+31          output(base,height,area);
+(gdb) n
+thr area of 4.000000 and 6.000000 is 12.00000032            return 0;
+(gdb)
