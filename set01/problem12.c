@@ -45,7 +45,7 @@ Complex add(Complex a, Complex b)
 
 Complex add_n_complex(int n, Complex c[n]) 
 {
-    Complex sum;
+    Complex sum={0,0};
     for (int i=0; i<n; i++) 
     {
         sum=add(sum, c[i]);
