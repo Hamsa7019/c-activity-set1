@@ -1,0 +1,43 @@
+ C:\Users\Manasa\Desktop\c-activity-set1\set02> gdb a.exe
+GNU gdb (GDB) 7.6.1
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "mingw32".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+Reading symbols from C:\Users\Manasa\Desktop\c-activity-set1\set02\a.exe...done.
+(gdb) b min
+Function "min" not defined.
+Make breakpoint pending on future shared library load? (y or [n]) y
+Breakpoint 1 (min) pending.
+(gdb) b main
+Breakpoint 2 at 0x40151a: file problem03.c, line 36.
+(gdb) r
+Starting program: C:\Users\Manasa\Desktop\c-activity-set1\set02/a.exe 
+[New Thread 26308.0x2cfc]
+[New Thread 26308.0x6590]
+
+Breakpoint 2, main () at problem03.c:36
+36          n=input_number();
+(gdb) s
+input_number () at problem03.c:8
+8           printf("enter the number\n");
+(gdb) n
+enter the number
+9           scanf("%d",&n);
+(gdb) n
+49
+10          return n;
+(gdb) n
+11      }
+(gdb) n
+main () at problem03.c:37
+37          result=is_composite(n);
+(gdb) n
+38          output(n,result);
+(gdb) n
+the number 49 is a composite number39       return 0;
+(gdb) c

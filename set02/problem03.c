@@ -18,6 +18,9 @@ int is_composite(int n)
     {
         return i;
     }
+    else{
+        return 0;
+    }
    }
 }
 void output(int n, int result)
