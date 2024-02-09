@@ -1,0 +1,65 @@
+PS C:\Users\Manasa\Desktop\c-activity-set1\set02> gdb ./problem02.exe
+GNU gdb (GDB) 7.6.1
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "mingw32".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+Reading symbols from C:\Users\Manasa\Desktop\c-activity-set1\set02\problem02.exe...done.
+(gdb) b main
+Breakpoint 1 at 0x401514: file problem02.c, line 38.
+(gdb) r
+Starting program: C:\Users\Manasa\Desktop\c-activity-set1\set02/./problem02.exe
+[New Thread 4428.0x34fc]
+[New Thread 4428.0x1fe4]
+
+Breakpoint 1, main () at problem02.c:38
+warning: Source file is more recent than executable.
+38          a=input_side();
+(gdb) s
+input_side () at problem02.c:10
+10        printf("enter the side\n");
+(gdb) n
+enter the side11          scanf("%d",&side);
+(gdb) n
+3
+12        return side;
+(gdb) n
+13      }
+(gdb) n
+main () at problem02.c:39
+39          b=input_side();
+(gdb) s
+input_side () at problem02.c:10
+10        printf("enter the side\n");
+(gdb) n
+enter the side11          scanf("%d",&side);
+(gdb) n
+4
+12        return side;
+(gdb) n
+13      }
+(gdb) n
+main () at problem02.c:40
+40          c=input_side();
+(gdb) s
+input_side () at problem02.c:10
+10        printf("enter the side\n");
+(gdb) n
+enter the side11          scanf("%d",&side);
+(gdb) n
+5
+12        return side;
+(gdb) n
+13      }
+(gdb) n
+main () at problem02.c:41
+41          isscalene=check_scalene(a,b,c);
+(gdb) n
+42          output(a,b,c,isscalene);
+(gdb) n
+the triangle with sides 3,4 and 5 is scalene triangle43     return 0;
+(gdb)

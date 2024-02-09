@@ -7,7 +7,7 @@ void output(int a, int b, int c, int isscalene);
 int input_side()
 {
   int side;
-  printf("enter the side");
+  printf("enter the side\n");
   scanf("%d",&side);
   return side;
 }
