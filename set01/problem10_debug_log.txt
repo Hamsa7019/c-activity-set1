@@ -1,11 +1,4 @@
-PS C:\Users\Manasa\Desktop\c-activity-set1> git add .
-PS C:\Users\Manasa\Desktop\c-activity-set1> cd set01
-PS C:\Users\Manasa\Desktop\c-activity-set1\set01> gcc -g -O0 problem10.c -o problem10.exe
->> 
-c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file problem10.exe: Permission denied
-collect2.exe: error: ld returned 1 exit status
-PS C:\Users\Manasa\Desktop\c-activity-set1\set01>  gdb .\problem10.exe
->> 
+PS C:\Users\Manasa\Desktop\c-activity-set1\set01> gdb ./problem10.exe
 GNU gdb (GDB) 7.6.1
 Copyright (C) 2013 Free Software Foundation, Inc.
 License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
@@ -17,252 +10,36 @@ For bug reporting instructions, please see:
 <http://www.gnu.org/software/gdb/bugs/>...
 Reading symbols from C:\Users\Manasa\Desktop\c-activity-set1\set01\problem10.exe...done.
 (gdb) b main
-Breakpoint 1 at 0x40158a: file problem10.c, line 48.
+Breakpoint 1 at 0x40158a: file problem10.c, line 36.
 (gdb) r
 Starting program: C:\Users\Manasa\Desktop\c-activity-set1\set01/./problem10.exe 
-[New Thread 15572.0x2f14]
-[New Thread 15572.0x3c0c]
+[New Thread 19044.0x44d4]
+[New Thread 19044.0x5b54]
 
-Breakpoint 1, main () at problem10.c:48
-48          input_two_strings(string1, string2);
+Breakpoint 1, main () at problem10.c:36
+36        input_strings(string1, string2);
 (gdb) s
-input_two_strings (string1=0x61feb8 "\034"6wü_a", string2=0x61fe54 "+V\004i"_a") at problem10.c:4
-4           printf("Enter the first string:\n");
+input_strings (string1=0x61feb8 "\034"6wü_a", string2=0x61fe54 "dƒzå"_a") at problem10.c:4
+4         printf("Enter the first string : \n");
 (gdb) n
-Enter the first string:
-5           scanf("%s", string1);
+Enter the first string :
+5         scanf("%s", string1);
 (gdb) n
 hell
-6           printf("Enter the second string:\n");
-(gdb) s
-Enter the second string:
-7           scanf("%s", string2);
+6         printf("Enter the second string : \n");
+(gdb) n
+Enter the second string :
+7         scanf("%s", string2);
 (gdb) n
 hello
-8       }
+8         return 0;
 (gdb) n
-main () at problem10.c:49
-49          result = stringcompare(string1, string2);
+9       }
 (gdb) n
-50          output(string1, string2, result);
+main () at problem10.c:37
+37        int result = compare_the_strings(string1, string2);
 (gdb) n
-hello is greater than hell
-51          return 0;
+38        output(string1, string2, result);
 (gdb) n
-52      }(gdb) n
-0x00401288 in __register_frame_info ()
-(gdb) n
-Single stepping until exit from function __register_frame_info,
-which has no line number information.
-0x0040128a in __register_frame_info ()
-(gdb) n
-Single stepping until exit from function __register_frame_info,
-which has no line number information.
-0x0040128f in __register_frame_info ()
-(gdb) n
-Single stepping until exit from function __register_frame_info,
-which has no line number information.
-0x00401292 in __register_frame_info ()
+hello is Greater than hell39      return 0;
 (gdb) q
-A debugging session is active.
-
-        Inferior 1 [process 15572] will be killed.
-
-Quit anyway? (y or n) y
-error return ../../gdb-7.6.1/gdb/windows-nat.c:1275 was 5
-PS C:\Users\Manasa\Desktop\c-activity-set1\set01> gdb ./problem10.exe
-GNU gdb (GDB) 7.6.1
-Copyright (C) 2013 Free Software Foundation, Inc.
-License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
-This is free software: you are free to change and redistribute it.
-There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
-and "show warranty" for details.
-This GDB was configured as "mingw32".
-For bug reporting instructions, please see:
-<http://www.gnu.org/software/gdb/bugs/>...
-Reading symbols from C:\Users\Manasa\Desktop\c-activity-set1\set01\problem10.exe...done.
-(gdb) b main
-Breakpoint 1 at 0x40158a: file problem10.c, line 48.
-(gdb) r
-Starting program: C:\Users\Manasa\Desktop\c-activity-set1\set01/./problem10.exe 
-[New Thread 19908.0x24bc]
-[New Thread 19908.0x175c]
-
-Breakpoint 1, main () at problem10.c:48
-48          input_two_strings(string1, string2);
-(gdb) s
-input_two_strings (string1=0x61feb8 "\034"6wü_a", string2=0x61fe54 "7>vK"_a") at problem10.c:4
-4           printf("Enter the first string:\n");
-(gdb) n
-Enter the first string:
-5           scanf("%s", string1);
-(gdb) n
-hell
-6           printf("Enter the second string:\n");
-(gdb) n
-Enter the second string:
-7           scanf("%s", string2);
-(gdb) n
-hell
-8       }
-(gdb) n
-main () at problem10.c:49
-49          result = stringcompare(string1, string2);
-(gdb) n
-50          output(string1, string2, result);
-(gdb) n
-hell is equal to hell
-51          return 0;
-(gdb) c
-Continuing.
-[Inferior 1 (process 19908) exited normally]
-(gdb) n
-The program is not being run.
-(gdb) q
-PS C:\Users\Manasa\Desktop\c-activity-set1\set01> gdb ./problem10.exe
-GNU gdb (GDB) 7.6.1
-Copyright (C) 2013 Free Software Foundation, Inc.
-License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
-This is free software: you are free to change and redistribute it.
-There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
-and "show warranty" for details.
-This GDB was configured as "mingw32".
-For bug reporting instructions, please see:
-<http://www.gnu.org/software/gdb/bugs/>...
-Reading symbols from C:\Users\Manasa\Desktop\c-activity-set1\set01\problem10.exe...done.
-(gdb) b main
-Breakpoint 1 at 0x40158a: file problem10.c, line 48.
-(gdb) r
-Starting program: C:\Users\Manasa\Desktop\c-activity-set1\set01/./problem10.exe
-[New Thread 20268.0x36d0]
-[New Thread 20268.0x4d24]
-
-Breakpoint 1, main () at problem10.c:48
-48          input_two_strings(string1, string2);
-(gdb) s
-input_two_strings (string1=0x61feb8 "\034"6wü_a", string2=0x61fe54 "ú\231\022t"_a") at problem10.c:4
-4           printf("Enter the first string:\n");
-(gdb) n
-Enter the first string:
-5           scanf("%s", string1);
-(gdb) n
-hello
-6           printf("Enter the second string:\n");
-(gdb) n
-Enter the second string:
-7           scanf("%s", string2);
-(gdb) n
-hell
-8       }
-(gdb) n
-main () at problem10.c:49
-49          result = stringcompare(string1, string2);
-(gdb) n
-50          output(string1, string2, result);
-(gdb) n
-hello is greater than hell
-51          return 0;
-(gdb) n
-52      }(gdb) n
-0x00401288 in __register_frame_info ()
-(gdb) q
-A debugging session is active.
-
-        Inferior 1 [process 20268] will be killed.
-
-Quit anyway? (y or n) y
-error return ../../gdb-7.6.1/gdb/windows-nat.c:1275 was 5
-PS C:\Users\Manasa\Desktop\c-activity-set1\set01> gdb ./problem10.exe
-GNU gdb (GDB) 7.6.1
-Copyright (C) 2013 Free Software Foundation, Inc.
-License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
-This is free software: you are free to change and redistribute it.
-There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
-and "show warranty" for details.
-This GDB was configured as "mingw32".
-For bug reporting instructions, please see:
-<http://www.gnu.org/software/gdb/bugs/>...
-Reading symbols from C:\Users\Manasa\Desktop\c-activity-set1\set01\problem10.exe...done.
-(gdb) b main
-Breakpoint 1 at 0x40158a: file problem10.c, line 48.
-(gdb) r
-Starting program: C:\Users\Manasa\Desktop\c-activity-set1\set01/./problem10.exe
-[New Thread 22972.0x3d2c]
-[New Thread 22972.0x32b8]
-
-Breakpoint 1, main () at problem10.c:48
-48          input_two_strings(string1, string2);
-(gdb) s
-input_two_strings (string1=0x61feb8 "\034"6wü_a", string2=0x61fe54 "üg\177O"_a") at problem10.c:4
-4           printf("Enter the first string:\n");
-(gdb) s
-Enter the first string:
-5           scanf("%s", string1);
-(gdb) s
-hello
-6           printf("Enter the second string:\n");
-(gdb) n
-Enter the second string:
-7           scanf("%s", string2);
-(gdb) n
-world
-8       }
-(gdb) n
-main () at problem10.c:49
-49          result = stringcompare(string1, string2);
-(gdb) n
-50          output(string1, string2, result);
-(gdb) n
-world is greater than hello
-51          return 0;
-(gdb) q
-A debugging session is active.
-
-        Inferior 1 [process 22972] will be killed.
-
-Quit anyway? (y or n) y
-error return ../../gdb-7.6.1/gdb/windows-nat.c:1275 was 5
-PS C:\Users\Manasa\Desktop\c-activity-set1\set01> gdb ./problem10.exe
-GNU gdb (GDB) 7.6.1
-Copyright (C) 2013 Free Software Foundation, Inc.
-License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
-This is free software: you are free to change and redistribute it.
-There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
-and "show warranty" for details.
-This GDB was configured as "mingw32".
-For bug reporting instructions, please see:
-<http://www.gnu.org/software/gdb/bugs/>...
-Reading symbols from C:\Users\Manasa\Desktop\c-activity-set1\set01\problem10.exe...done.
-(gdb) b main
-Breakpoint 1 at 0x40158a: file problem10.c, line 48.
-(gdb) r
-Starting program: C:\Users\Manasa\Desktop\c-activity-set1\set01/./problem10.exe
-[New Thread 8696.0x22dc]
-[New Thread 8696.0x5144]
-
-Breakpoint 1, main () at problem10.c:48
-warning: Source file is more recent than executable.
-48          input_two_strings(string1, string2);
-(gdb) s
-input_two_strings (string1=0x61feb8 "\034"6wü_a", string2=0x61fe54 "É▌\020ô"_a") at problem10.c:4
-4           printf("Enter the first string:\n");
-(gdb) n
-Enter the first string:
-5           scanf("%s", string1);
-(gdb) n
-hello
-6           printf("Enter the second string:\n");
-(gdb) n
-Enter the second string:
-7           scanf("%s", string2);
-(gdb) n
-hellw
-8       }
-(gdb) n
-main () at problem10.c:49
-49          result = stringcompare(string1, string2);
-(gdb) n
-50          output(string1, string2, result);
-(gdb) n
-hellw is greater than hello
-51          return 0;
