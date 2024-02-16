@@ -23,11 +23,11 @@ void input_array(int n, int a[n])
 }
 int sum_composite_numbers(int n, int a[n])
 {
-    int i,c,sum=0;
+    int i,sum=0;
     for(i=0;i<n;i++){
-        for(int j=2;j<=sqrt(a[i]);j++){
-        if(a[i]%j==0){
-                sum+=a[i];
+        for(int j=2;j<=sqrt(a[j]);j++){
+        if(a[j]%n==0){
+                sum+=a[j];
             
             }
         }
