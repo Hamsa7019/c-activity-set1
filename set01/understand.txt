@@ -20,3 +20,21 @@ int *b; (address/pointer variable)
 & --> it is copied to the variable during function call.
 
 Day--2
+length of the string-->
+start loop with i
+stop loop when a[i]=='\0'
+(if not)
+i++ 
+for(int i=0;a[i]=='\0';i++);
+return i;
+count-->
+int count=0;
+for(int i=0;a[i]!='\0';i++)
+if(a[i]=='a')
+count++;
+return count;
+void reverse(char a[i])
+{
+    for(int i=0;i<n;i++);
+    rev_str=string;
+}
