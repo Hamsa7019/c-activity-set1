@@ -11,11 +11,19 @@ void input_string(char *a)
 }
 void str_reverse(char *str, char *rev_str)
 {
+    int length=strlen(str);
+    int i,j;
+    for(i=length-1;i>=0;i--){
+        rev_str[j]=str[i];
+        j++;
+    }
+    rev_str='\0';
      
 }
 void output(char *a, char *reverse_a)
 {
-    
+   printf("original string: %s",a);
+   printf("Reveresed string: %s",reverse_a); 
 }
 int main()
 {
