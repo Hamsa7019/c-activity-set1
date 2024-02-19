@@ -27,11 +27,9 @@ void output(char *a, char *reverse_a)
 }
 int main()
 {
-    
-    char str[100],a,rev_str;
-    char rev_a;
-    input_string(&a);
-    str_reverse(&str,&rev_str);
-    output(&a,&rev_a);
+     char str[100], rev_str[100];
+    input_string(str);
+    str_reverse(str, rev_str);
+    output(str, rev_str);
     return 0;
 }
