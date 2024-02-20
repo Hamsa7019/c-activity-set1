@@ -13,13 +13,13 @@ int input()
 }
 int find_gcd(int a, int b)
 {
-     int temp;
-    while (b != 0) {
-        temp = b;
-        b = a % b;
-        a = temp;
+    int gcd;
+  for( int i=1; i<=a && i<=b;i++)
+    {
+        if(a%i==0 && b%i==0)
+            gcd = i;
     }
-    return a;
+    return gcd;
 }
 void output(int a, int b, int gcd)
 {

@@ -1,0 +1,57 @@
+PS C:\Users\Manasa\Desktop\c-activity-set1\set02> gdb ./problem05.exe
+GNU gdb (GDB) 7.6.1
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "mingw32".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+Reading symbols from C:\Users\Manasa\Desktop\c-activity-set1\set02\problem05.exe...done.
+(gdb) B MAIN
+Function "MAIN" not defined.
+Make breakpoint pending on future shared library load? (y or [n]) y
+Breakpoint 1 (MAIN) pending.
+(gdb) b main
+Breakpoint 2 at 0x4014eb: file problem05.c, line 31.
+(gdb) r
+Starting program: C:\Users\Manasa\Desktop\c-activity-set1\set02/./problem05.exe
+[New Thread 23108.0x54b8]
+[New Thread 23108.0x3320]
+
+Breakpoint 2, main () at problem05.c:31
+warning: Source file is more recent than executable.
+31          a=input();
+(gdb) s
+input () at problem05.c:10
+10        printf("enter the value:\n");
+(gdb) n
+enter the value:
+11        scanf("%d",&n);
+(gdb) n
+81
+12        return n;
+(gdb) n
+13      }
+(gdb) n
+main () at problem05.c:32
+32          b=input();
+(gdb) s
+input () at problem05.c:10
+10        printf("enter the value:\n");
+(gdb) n
+enter the value:
+11        scanf("%d",&n);
+(gdb) n
+153
+12        return n;
+(gdb) n
+13      }
+(gdb) n
+main () at problem05.c:33
+33          gcd=find_gcd(a,b);
+(gdb) n
+34          output(a,b,gcd);
+(gdb) n
+the gcd of 81 and 153 is 9 return 0;
