@@ -24,6 +24,7 @@ int is_composite(int n)
    for(i=2;i<=sqrt(n);i++)
    {
     if(n%i==0)
+
     {
         return 1;
     }
