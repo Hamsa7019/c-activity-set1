@@ -17,9 +17,9 @@ void input_array(int n, int a[n])
 }
 int sum_composite_numbers(int n, int a[n])
 {
-    int i,sum,fact=0;
+    int i,sum;
     for(i=0;i<n;i++){
-        for(fact=2;fact<=sqrt(a[i]);fact++)
+        for(int fact=2;fact<=sqrt(a[i]);fact++)
         {
             if(a[i]%fact==0)
             {
