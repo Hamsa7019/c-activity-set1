@@ -34,3 +34,11 @@ void output(int n,int result)
         printf("%d is prime number\n",n);
     }
 }
+int main()
+{
+    int n,result;
+     n= input_number();
+     result = is_prime(n);
+    output(n,result);
+    return 0;
+}

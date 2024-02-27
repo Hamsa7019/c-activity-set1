@@ -20,7 +20,7 @@ int is_triangle(float x1, float y1, float x2, float y2,float x3, float y3)
     float side1 = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
     float side2 = sqrt(pow(x3 - x2, 2) + pow(y3 - y2, 2));
     float side3 = sqrt(pow(x1 - x3, 2) + pow(y1 - y3, 2));
-    return (side1+side2>side3)&&(side2+side3>side1)&&(side3+side1>side2);
+    return (side1+side2-side3)&&(side2+side3-side1)&&(side3+side1-side2);
 }
 void output(float x1, float y1, float x2, float y2,float x3, float y3, int result)
 {
