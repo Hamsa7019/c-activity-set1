@@ -11,13 +11,26 @@ int input()
 }
 int find_gcd(int a, int b)
 {
-    int gcd;
-  for( int i=1; i<=a && i<=b;i++)
+    int gcd; 
+  while(1)
+  {
+    if(a>b)
     {
-        if(a%i==0 && b%i==0)
-            gcd = i;
+      a=a-b; 
     }
-    return gcd;
+    else{
+      b=b-a; 
+    }
+    if(a==b)
+    {
+      gcd=a;
+      return gcd; 
+  break;
+    }
+  
+  }
+
+ 
 }
 void output(int a, int b, int gcd)
 {
@@ -31,4 +44,5 @@ int main()
     gcd=find_gcd(a,b);
     output(a,b,gcd);
     return 0;
+
 }

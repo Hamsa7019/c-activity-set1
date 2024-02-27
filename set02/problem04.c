@@ -20,13 +20,13 @@ void input_array(int n, int a[n])
 }
 
 int sum_composite_numbers(int n, int a[n])
-{   int i=0,sum=0;
-    for(int i;i<n;i++){
+{   int i,sum=0;
+    for(i=0;i<n;i++){
          if(a[i]<=2){
-            continue;
+            break;
             }
         else{
-            for(int j=2;j<a[i];j++){
+            for(int j=2;j<sqrt(a[i])+1;j++){
                 if(a[i]%j==0){
                     sum+=a[i];
                     break;
@@ -36,6 +36,7 @@ int sum_composite_numbers(int n, int a[n])
     }
     return sum;
 }
+
 void output(int sum, int n, int a[n]) 
 {
     printf("Composite numbers:\n ");
