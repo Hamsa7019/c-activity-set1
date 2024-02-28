@@ -46,3 +46,52 @@ main () at problem02.c:37
 (gdb) n
 The points (1.00, 0.00), (1.00, 0.00), and (1.00, 0.00) do not form a triangle.
 39         return 0;
+GNU gdb (GDB) 7.6.1
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "mingw32".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+Reading symbols from C:\Users\Manasa\Desktop\c-activity-set1\set03\problem02.exe...done.
+(gdb) b main
+Breakpoint 1 at 0x4016a6: file problem02.c, line 36.
+(gdb) r
+Starting program: C:\Users\Manasa\Desktop\c-activity-set1\set03/./problem02.exe
+[New Thread 18200.0x70c0]
+[New Thread 18200.0x3bfc]
+
+Breakpoint 1, main () at problem02.c:36
+warning: Source file is more recent than executable.
+36         int result=is_triangle(x1,y1,x2,y2,x3,y3);
+(gdb) s
+input_triangle (x1=0x61ff18, y1=0x61ff14, x2=0x61ff10, y2=0x61ff0c, x3=0x61ff08, y3=0x61ff04) at problem02.c:10
+10          printf("enter the value for x1 and y1\n");
+(gdb) n
+enter the value for x1,y1
+11          scanf("%f,%f",x1,y1);
+(gdb) n
+4,3
+12          printf("enter the value for x2 and y2\n");
+(gdb) n
+enter the value for x2,y2
+13          scanf("%f,%f",x2,y2);
+(gdb) n
+5,4
+14          printf("enter the value for x3 and y3\n");
+(gdb) n
+enter the value for x3,y3
+15          scanf("%f,%f",x3,y3);
+(gdb) n
+7,6
+16      }
+(gdb) n
+main () at problem02.c:37
+37         output(x1,y1,x2,y2,x3,y3,result);
+(gdb) n
+38         return 0;
+(gdb) n
+The points (4.00, 3.00), (5.00, 4.00), and (7.00, 6.00) form a triangle.
+39      }
