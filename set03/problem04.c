@@ -13,21 +13,16 @@ int input()
     return n;
 }
 int find_fibo(int n)
-{
-    if (n <= 1) 
+{   
+    int a[n];
+    a[0] = 0;
+    a[1] = 1;
+    for (int i = 2; i <= n; i++)
     {
-        return n;
+        a[i] = a[i - 1] + a[i - 2];
     }
-     else {
-        int a = 0, b = 1, temp;
-        for (int i = 2; i <= n; i++) 
-        {
-            temp = a + b;
-            a = b;
-            b = temp;
-        }
-        return b;
-    }
+    return a[n];
+    
 }
 void output(int n,int fibo)
 {

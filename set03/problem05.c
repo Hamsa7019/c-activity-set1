@@ -24,18 +24,44 @@ void input_array(int n, int a[n])
 }
 void erotosthenes_sieve(int n, int a[n])
 {
-   
+    for (int i = 0; i < n; i++)
+    {
+        if (a[i] > 1)
+        {
+            for (int j = 2; j * j <= a[i]; j++)
+            {
+                if (a[i] % j == 0)
+                {
+                    a[i] = 0; 
+                    break;
+                }
+            }
+        }
+        else
+        {
+            a[i] = 0; 
+        }
+    }
 }
 void output(int n,int a[n])
 {
-     printf("Prime numbers between 2 and %d are: ", n);
-    
+      printf("Prime numbers between 2 and %d are: ", n);
+    for (int i = 0; i < n; i++)
+    {
+        if (a[i] != 0)
+        {
+            printf("%d ", a[i]);
+        }
+    }
+    printf("\n");
 }
 int main()
  {
-    int n = input_array_size();
-    int n= a[n];
-    eratosthenes_sieve(n,a);
+    int n;
+    n = input_array_size();
+    int a[n];
+    input_array(n, a);
+    eratosthenes_sieve(n, a);
     output(n, a);
     return 0;
 }
