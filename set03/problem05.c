@@ -14,51 +14,54 @@ int input_array_size()
     scanf("%d",&n);
     return n;
 }
-void input_array(int n, int a[n])
+void init_array(int n, int a[n])
 {
     for(int i=0;i<n;i++)
     {
-        printf("enter the array\n");
-        scanf("%d",a[i]);
+        a[i]=i;
     }
 }
 void erotosthenes_sieve(int n, int a[n])
 {
-    for (int i = 0; i < n; i++)
+   for(int i=0;i<n;i++)
+   {
+    if(a[i]>1)
+    {  
+    for(int j=2;j*j<=a[i];j++)
     {
-    
-        
-            for (int j = 2; j * j <= a[i]; j++)
-            {
-                if (a[i] % j == 0)
-                {
-                    a[i] = 0; 
-                    break;
-                }
-            
+        if(a[i]%j==0)
+        {
+            a[i]=0;
         }
-       
+        else{
+            continue;
+        }
+    } 
     }
+    
+   }
 }
 void output(int n,int a[n])
 {
-      printf("Prime numbers between 2 and %d are: ", n);
-    for (int i = 0; i < n; i++)
-    {
-        if (a[i] != 0)
+      for(int i=0;i<n;i++)
+      {
+        if(a[i]=0)
         {
-            printf("%d ", a[i]);
+            printf("%d",a[n]);
         }
-    }
-    printf("\n");
+        else{
+            printf("%d",a[n]);
+        }
+      }
+   
 }
 int main()
  {
     int n;
     n = input_array_size();
     int a[n];
-    input_array(n, a);
-    eratosthenes_sieve(n, a);
+    init_array(n, a);
+    erotosthenes_sieve(n, a);
     output(n, a);
     return 0;
 }
